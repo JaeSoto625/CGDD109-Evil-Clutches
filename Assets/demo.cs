@@ -1,16 +1,19 @@
 using UnityEngine;
+using TMPro;
+using System.Diagnostics;
 
+[DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
 public class demo : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public TextMeshProUGUI textbox;
+
+    public void OnClick()
     {
-        Debug.Log(Time.deltaTime);
+        textbox.text = "Hello Fall Class of 2026!";
     }
 
-    // Update is called once per frame
-    void Update()
+    private string GetDebuggerDisplay()
     {
-        
+        return ToString();
     }
 }
