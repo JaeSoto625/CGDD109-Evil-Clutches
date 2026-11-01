@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 4.5f;
-    public Text scorebox;
+    public TextMeshProUGUI scorebox;
     private int scoreval = 0;
     void Update()
     {
@@ -29,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<ratmove>() != null)
             {
-                scoreval += collision.gameObject.GetComponent<ratmove>().points;
+                scoreval += collision.GetComponent<ratmove>().points;
                 scorebox.text = $"Score: {scoreval}";
             }
             Destroy(collision.gameObject);
